@@ -12,19 +12,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
+  # firebase
+  firebase_auth_mocks: ^0.9.2
   firebase_core:
   firebase_auth:
-  equatable:
-  connectivity:
+  #state managment
   flutter_riverpod:
+  # Functional programming thingies
+  dartz:
+  # equatble
+  equatable:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito:
-  rxdart:
   flutter_lints: ^2.0.0
 
 flutter:

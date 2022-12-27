@@ -4,6 +4,7 @@ import 'package:auth_app/features/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constant/colors.dart';
+import '../../../core/constant/loader.dart';
 
 
 class AuthScreen extends ConsumerStatefulWidget {
@@ -67,7 +68,18 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                     InputTextFiled(keytextFiled:const Key('input1'),controller: emailController, hintText: 'Enter Email'),
                     InputTextFiled(keytextFiled:const Key('input2'),controller: passowrdController, hintText: 'Password'),
                     if(authMode==AuthMode.singUp)InputTextFiled(keytextFiled:const Key('input3'),controller: confirmPassowrdController, hintText: 'Confirm Password'),
-                    ElevatedButton(onPressed: signIn, child: Text(authMode==AuthMode.singIn?'SignIn':'SignUp')),
+                    FutureBuilder(
+                      builder:(context,snapshot){ 
+                        if (snapshot.connectionState==ConnectionState.waiting){
+                          return const Loader();
+                        }
+                        return ElevatedButton(
+                        onPressed: signIn,
+                        child: Text(
+                          authMode==AuthMode.singIn?'SignIn':'SignUp'
+                          )
+                          );
+               }),
                     TextButton(onPressed: changeMode, child: Text(authMode==AuthMode.singIn?'SignUp':'SignIn'))
                   ],
                 ),

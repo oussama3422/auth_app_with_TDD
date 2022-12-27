@@ -1,16 +1,16 @@
 
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-void showSnackBar({required BuildContext context,required String message}){
-   ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(
-        message,
-        style: const TextStyle(
+//  showSnackBar({required String message}){
+//    return ScaffoldMessenger.showSnackBar(
+//     SnackBar(
+//       content: Text(
+//         message,
+//         style: const TextStyle(
 
-        ),
-    )
-    )
-    );
- }
+//         ),
+//     )
+//     )
+//     );
+//  }
